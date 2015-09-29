@@ -1,0 +1,20 @@
+{
+	"title": "Tasks",
+	"tasksToday":[
+	{"task":"I should do this today"},
+	{"task":"I should do that today!"},
+	{"task":"I should do that stuff today!!!"},
+	{"task":"I should..."},
+	{"task":"I shouldn't "}],
+	"tasksWeek":[
+	{"task":"I should do this next week!"},
+	{"task":"I should do that on that week!"},
+	{"task":"Some stuff"},
+	{"task":"I should..."},
+	{"task":"I shouldn't "}],
+	"tasksSomeDay":[
+	{"task":"I so that one day"},
+	{"task":"I should do that stuff, I believe"},
+	{"task":"I should..."},
+	{"task":"I shouldn't "}]
+}

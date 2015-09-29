@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ToDo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="../public/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" /> 
+    <link href="../public/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    
+</head>
+
+<body>
+    <div class="container">
+        
+	<form class="form-horizontal">
+    <div class="row">
+        <div class="form-group col-xs-8 ">
+            <input type="text" class="form-control" id="new-task" placeholder="Should we do smth?">
+        </div>
+        <button type="submit" class="btn btn-default col-xs-4 " id='add-task'>Add Task</button>
+    </div>
+    <div id="radio-div">
+        <label class="radio-inline">
+            <input type="radio" name="deadline" id="todayRadio" value="today"> Today
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="deadline" id="weekRadio" value="week"> This Week
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="deadline" id="oneDayRadio" value="oneDay" checked> Some Day
+        </label>
+    </div>
+</form>
+
+
+    <nav class="nav nav-tabs">
+    <li id='day-box'><a href="#" onclick="dayActive();">Today</a></li>
+    <li id='week-box'><a href="#" onclick="weekActive();">Week</a></li>
+    <li id="someDay-box"><a href="#" onclick="someDayActive();">Some Day</a></li>
+    <li id="all" class="active"><a href="#" onclick="allActive();">All</a></li>
+</nav>
+<article id="day-tasks">
+</article>
+<article id="week-tasks">
+</article>
+<article id="someDay-tasks">
+</article>
+
+
+    </div>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="../public/js/taskImpl.js"></script>
+    <script src="../public/js/myScript.js"></script>
+    <script src="../public/js/activePanel.js"></script>
+</body>
+
+</html>
