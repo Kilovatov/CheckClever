@@ -1,12 +1,16 @@
 <nav class="nav nav-tabs">
-    <li id='day-box'><a href="#" onclick="dayActive();">Today</a></li>
-    <li id='week-box'><a href="#" onclick="weekActive();">Week</a></li>
-    <li id="someDay-box"><a href="#" onclick="someDayActive();">Some Day</a></li>
-    <li id="all" class="active"><a href="#" onclick="allActive();">All</a></li>
+    <li id='day-box'><a href="#" onclick="activePanel('today');">Today</a></li>
+    <li id='week-box'><a href="#" onclick="activePanel('week');">Week</a></li>
+    <li id="someDay-box"><a href="#" onclick="activePanel('oneDay');">Some Day</a></li>
+    <li id="all" class="active"><a href="#" onclick="activePanel('all');">All</a></li>
 </nav>
-<article id="day-tasks">
+
+<article id='box'>
+	
+</article>
+<!-- <article id="day-tasks">
 </article>
 <article id="week-tasks">
 </article>
 <article id="someDay-tasks">
-</article>
+</article> -->
