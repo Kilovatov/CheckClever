@@ -1,5 +1,5 @@
-var newTask = document.querySelector('#new-task');
-var addTaskBtn = document.querySelector('#add-task');
+var newTask = document.getElementById('new-task');
+var addTaskBtn = document.getElementById('add-task');
 var radioChoice = document.getElementsByName('deadline');
 var deadln;
 
@@ -13,8 +13,10 @@ function Task(texts, deadline) {
 
 
 addTaskBtn.onclick = function(e) {
-    $(".save").click();
-    if (newTask.value === "") {
+    safePush();
+    e.preventDefault();
+    e.stopPropagation();
+    if (newTask.value === "") {        
         return;
     }
     for (var i = 0; i < radioChoice.length; i++) {
@@ -25,12 +27,11 @@ addTaskBtn.onclick = function(e) {
         }
     }
     newTask.value = "";
-    e.preventDefault();
-    e.stopPropagation();
+    
 };
 
 function del(deleteButton) {
-    $(".save").click();
+    safePush();
     for (var i = 0; i < list.length; i++) {
         if (deleteButton.parentNode.childNodes[2].textContent == list[i].texts) {
             list.splice(i, 1);
@@ -41,7 +42,7 @@ function del(deleteButton) {
 }
 
 function edt(text) {
-    $(".save").click();
+    safePush();
     var tsk = text.parentNode;
     var oldValue = tsk.childNodes[2].textContent;
     tsk.innerHTML = "";
@@ -51,7 +52,9 @@ function edt(text) {
     tsk.appendChild(input);
     var saveButton = document.createElement("button");
     saveButton.textContent = "save";
-    saveButton.setAttribute("class", "save btn btn-default");
+    saveButton.classList.add('btn-default');
+    saveButton.classList.add('btn');
+    saveButton.id = 'save';
     tsk.appendChild(saveButton);
 
     saveButton.onclick = function() {
@@ -70,8 +73,7 @@ function edt(text) {
 };
 
 function check(box) {
-
-    $(".save").click();
+    safePush();
     for (var i = list.length - 1; i >= 0; i--) {
         if (box.parentNode.childNodes[2].textContent == list[i].texts) {
             list[i].done = !list[i].done;
@@ -98,3 +100,15 @@ function checkForExpiredTasks() {
         }
     }
 }
+
+function safePush (){
+    if(document.getElementById("save")){
+        document.getElementById("save").click();
+    }
+}
+
+document.onkeyup = function (e) {  
+        if (e.keyCode === 13) {
+            safePush();    
+    }
+};

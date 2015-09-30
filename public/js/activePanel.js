@@ -18,32 +18,32 @@ function activePanel(deadline){
 
 
 function weekActive() {
-    document.getElementById('week-box').setAttribute('class', 'active');
-    document.getElementById('day-box').setAttribute('class', 'unactive');
-    document.getElementById('someDay-box').setAttribute('class', 'unactive');
-    document.getElementById('all').setAttribute('class', 'unactive');
+    document.getElementById('week-box').classList.add('active');
+    document.getElementById('day-box').classList.remove('active');
+    document.getElementById('someDay-box').classList.remove('active');
+    document.getElementById('all').classList.remove('active');
     document.getElementById('weekRadio').checked=true;
 }
 
 function dayActive() {
-    document.getElementById('week-box').setAttribute('class', 'unactive');
-    document.getElementById('all').setAttribute('class', 'unactive');
-    document.getElementById('day-box').setAttribute('class', 'active');
-    document.getElementById('someDay-box').setAttribute('class', 'unactive');
+    document.getElementById('week-box').classList.remove('active');
+    document.getElementById('day-box').classList.add('active');
+    document.getElementById('someDay-box').classList.remove('active');
+    document.getElementById('all').classList.remove('active');
     document.getElementById('todayRadio').checked=true;
 }
 
 function someDayActive() {
-    document.getElementById('week-box').setAttribute('class', 'unactive');
-    document.getElementById('day-box').setAttribute('class', 'unactive');
-    document.getElementById('all').setAttribute('class', 'unactive');
-    document.getElementById('someDay-box').setAttribute('class', 'active');
+    document.getElementById('week-box').classList.remove('active');
+    document.getElementById('day-box').classList.remove('active');
+    document.getElementById('someDay-box').classList.add('active');
+    document.getElementById('all').classList.remove('active');
     document.getElementById('oneDayRadio').checked=true;
 }
 
 function allActive() {
-    document.getElementById('week-box').setAttribute('class', 'unactive');
-    document.getElementById('day-box').setAttribute('class', 'unactive');
-    document.getElementById('all').setAttribute('class', 'active');
-    document.getElementById('someDay-box').setAttribute('class', 'unactive');
+    document.getElementById('week-box').classList.remove('active');
+    document.getElementById('day-box').classList.remove('active');
+    document.getElementById('someDay-box').classList.remove('active');
+    document.getElementById('all').classList.add('active');
 }
